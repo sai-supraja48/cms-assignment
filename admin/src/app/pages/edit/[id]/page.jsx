@@ -5,7 +5,6 @@ import { useParams, useRouter } from "next/navigation";
 import Sidebar from "../../../../components/Sidebar";
 import api from "../../../../services/api";
 import { toast } from "react-toastify";
-import RichTextEditor from "../../../../components/RichTextEditor";
 
 export default function EditPage() {
 
@@ -14,29 +13,18 @@ export default function EditPage() {
   const router = useRouter();
 
   const [form, setForm] = useState({
-  title: "",
-  slug: "",
-  status: "Draft",
-});
-
-const [content, setContent] = useState({
-  blocks: [],
-});
+    title:"",
+    slug:"",
+    content:"",
+    status:"Draft"
+  });
 
   useEffect(()=>{
 
     api.get(`/pages/${id}`)
     .then(res=>{
 
-      const page = res.data.page;
-
-setForm({
-  title: page.title,
-  slug: page.slug,
-  status: page.status,
-});
-
-setContent(page.content);
+      setForm(res.data.page);
 
     });
 
@@ -49,17 +37,14 @@ setContent(page.content);
     const token=localStorage.getItem("token");
 
     await api.put(
-  `/pages/${id}`,
-  {
-    ...form,
-    content,
-  },
-  {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
-);
+      `/pages/${id}`,
+      form,
+      {
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      }
+    );
 
     toast.success("Page Updated");
 
@@ -100,10 +85,14 @@ setContent(page.content);
             className="w-full border p-3 rounded"
           />
 
-          <RichTextEditor
-data={content}
-onChange={setContent}
-/>
+          <textarea
+            rows={8}
+            value={form.content}
+            onChange={(e)=>
+              setForm({...form,content:e.target.value})
+            }
+            className="w-full border p-3 rounded"
+          />
 
           <select
             value={form.status}

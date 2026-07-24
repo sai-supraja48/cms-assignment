@@ -4,21 +4,17 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Sidebar from "../../../components/Sidebar";
 import api from "../../../services/api";
-import RichTextEditor from "../../../components/RichTextEditor";
 
 export default function CreatePage() {
 
   const router = useRouter();
 
   const [form, setForm] = useState({
-  title: "",
-  slug: "",
-  status: "Draft"
-});
-
-const [content, setContent] = useState({
-  blocks: [],
-});
+    title: "",
+    slug: "",
+    content: "",
+    status: "Draft"
+  });
 
   const handleSubmit = async (e) => {
 
@@ -27,17 +23,14 @@ const [content, setContent] = useState({
     const token = localStorage.getItem("token");
 
     await api.post(
-  "/pages",
-  {
-    ...form,
-    content,
-  },
-  {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
-);
+      "/pages",
+      form,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
 
     router.push("/pages");
 
@@ -82,10 +75,17 @@ const [content, setContent] = useState({
             }
           />
 
-          <RichTextEditor
-  data={content}
-  onChange={setContent}
-/>
+          <textarea
+            rows="8"
+            placeholder="Content"
+            className="w-full border p-3 rounded"
+            onChange={(e)=>
+              setForm({
+                ...form,
+                content:e.target.value
+              })
+            }
+          />
 
           <select
             className="w-full border p-3 rounded"

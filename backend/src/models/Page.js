@@ -14,9 +14,9 @@ const pageSchema = new mongoose.Schema(
     },
 
     content: {
-type: Object,
-required: true
-},
+      type: String,
+      required: true,
+    },
 
     status: {
       type: String,

@@ -10,10 +10,6 @@
     "format": "biome format --write"
   },
   "dependencies": {
-    "@editorjs/editorjs": "^2.31.6",
-    "@editorjs/header": "^2.8.9",
-    "@editorjs/list": "^2.0.9",
-    "@editorjs/table": "^2.4.5",
     "@reduxjs/toolkit": "^2.12.0",
     "axios": "^1.18.1",
     "next": "16.2.11",
