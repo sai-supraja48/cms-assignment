@@ -119,7 +119,7 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ## Clone Repository
 
 ```bash
-git clone <your-github-repository>
+git clone https://github.com/sai-supraja48/cms-assignment.git
 
 cd cms-assignment
 ```
@@ -316,7 +316,7 @@ admin123
 ---
 
 GitHub:
-https://github.com/your-github-username
+https://github.com/sai-supraja48
 
 # Author
 
