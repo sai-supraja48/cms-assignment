@@ -3,6 +3,14 @@
 A production-ready Content Management System (CMS) built with **Next.js**, **Redux Toolkit**, **Express.js**, and **MongoDB**. The project includes an Admin Panel for managing website content and a Public Website that dynamically fetches content from the backend APIs.
 
 ---
+#BACKEND DEPLOY(RENDER)
+https://cms-assignment-y8x0.onrender.com
+
+#ADMIN DEPLOY(VERCEL)
+cms-assignment-rho.vercel.app
+
+#FRONTEND DEPLOY(VERCEL)
+cms-assignment-six.vercel.app
 
 # Tech Stack
 
