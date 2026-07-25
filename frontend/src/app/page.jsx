@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import DynamicPage from "./[slug]/page";
 
-export default function Page() {
-  redirect("/home");
+export default async function Home(props) {
+  return <DynamicPage params={Promise.resolve({ slug: "home" })} />;
 }
