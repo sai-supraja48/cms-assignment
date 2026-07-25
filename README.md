@@ -7,10 +7,10 @@ A production-ready Content Management System (CMS) built with **Next.js**, **Red
 https://cms-assignment-y8x0.onrender.com
 
 #ADMIN DEPLOY(VERCEL)
-cms-assignment-rho.vercel.app
+https://cms-assignment-rho.vercel.app
 
 #FRONTEND DEPLOY(VERCEL)
-cms-assignment-six.vercel.app
+https://cms-assignment-six.vercel.app
 
 # Tech Stack
 
