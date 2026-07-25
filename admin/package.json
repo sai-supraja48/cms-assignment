@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
+    "@netlify/plugin-nextjs": "^5.15.12",
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
     "tailwindcss": "^4"
